@@ -41,14 +41,20 @@ function createBoxes(amount) {
   for (const div of boxChild) {
     console.log(div);
     div.style.backgroundColor = getRandomHexColor();
-    div.style.width = setBoxSizes();
-    div.style.height = setBoxSizes();
+    div.style.width = setBoxWidth();
+    div.style.height = setBoxHeight();
   }
 }
 
-let startSize = 20;
+let startWidth = 20;
+let startHeight = 20;
 
-function setBoxSizes() {
-  startSize += 10;
-  return `${startSize}px`;
+function setBoxWidth() {
+  startWidth += 10;
+  return `${startWidth}px`;
+}
+
+function setBoxHeight() {
+  startHeight += 10;
+  return `${startHeight}px`;
 }
