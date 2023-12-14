@@ -35,6 +35,15 @@ function createBoxes(amount) {
   }
   const markup = markupArray.join('');
   boxes.insertAdjacentHTML('afterbegin', markup);
+
+  const boxChild = boxes.children;
+  console.log(boxChild);
+  for (const div of boxChild) {
+    console.log(div);
+    div.style.backgroundColor = getRandomHexColor();
+    div.style.width = '20px';
+    div.style.height = '50px';
+  }
 }
 
 // const result = createBoxes(5);
