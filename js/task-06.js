@@ -8,6 +8,10 @@ const input = document.querySelector('input');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
+let startWidth = 20;
+let startHeight = 20;
+
+input.addEventListener('change', checkInput);
 
 function checkInput(event) {
   const inputValue = event.currentTarget.value;
@@ -22,10 +26,6 @@ function checkInput(event) {
     return;
   }
 }
-
-input.addEventListener('change', checkInput);
-
-destroyBtn.addEventListener('click', () => {});
 
 function createBoxes(amount) {
   const markupArray = [];
@@ -44,10 +44,8 @@ function createBoxes(amount) {
     div.style.width = setBoxWidth();
     div.style.height = setBoxHeight();
   }
+  resetStartSize();
 }
-
-let startWidth = 20;
-let startHeight = 20;
 
 function setBoxWidth() {
   startWidth += 10;
@@ -58,3 +56,12 @@ function setBoxHeight() {
   startHeight += 10;
   return `${startHeight}px`;
 }
+
+function resetStartSize() {
+  startHeight = 20;
+  startWidth = 20;
+}
+
+destroyBtn.addEventListener('click', () => {
+  boxes.innerHTML = '';
+});
