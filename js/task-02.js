@@ -26,12 +26,11 @@ const images = [
 ];
 
 const imagesList = document.querySelector('.gallery');
-imagesList.classList.add('image-list');
 
 const markup = images
   .map(
     image =>
-      `<li><image src=${image.url} alt=${image.alt} width=360 height=300 /></li>`
+      `<li><img src='${image.url}' alt='${image.alt}' width='360' height='300' /></li>`
   )
   .join('');
 
