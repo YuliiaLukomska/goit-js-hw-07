@@ -11,7 +11,7 @@ function checkFormSubmission(event) {
     email: email.trim(),
     password: password.trim(),
   };
-  if (email === '' || password === '') {
+  if (email.trim() === '' || password.trim() === '') {
     alert('All form fields must be filled in');
   } else {
     console.log(loginFormValues);
