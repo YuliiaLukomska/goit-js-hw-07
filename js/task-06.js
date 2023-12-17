@@ -8,15 +8,15 @@ const input = document.querySelector('input');
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
 const boxes = document.querySelector('#boxes');
-let startBoxWidth = 30;
-let startBoxHeight = 30;
+const startBoxWidth = 30;
+const startBoxHeight = 30;
 
 createBtn.addEventListener('click', () => {
   const inputValue = Number(input.value);
   if (inputValue >= 1 && inputValue <= 100) {
     boxes.innerHTML = '';
-    createBoxes(inputValue);
     input.value = '';
+    createBoxes(inputValue);
   }
 });
 
